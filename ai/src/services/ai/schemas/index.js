@@ -9,11 +9,29 @@ const BaseResponseSchema = z.object({
 
 const { TripGeneratorRequestSchema, TripGeneratorResponseSchema } = require('./tripGeneratorSchema');
 const { BudgetOptimizerRequestSchema, BudgetOptimizerResponseSchema } = require('./budgetOptimizerSchema');
+const { ReplannerRequestSchema, ReplannerResponseSchema } = require('./replannerSchema');
+const { RouteOptimizerRequestSchema, RouteOptimizerResponseSchema } = require('./routeOptimizerSchema');
+const { CopilotRequestSchema, CopilotResponseSchema } = require('./copilotSchema');
+const { WhatIfRequestSchema, WhatIfResponseSchema } = require('./whatIfSchema');
+const { PackingRequestSchema, PackingResponseSchema } = require('./packingSchema');
+const { GroupPreferencesRequestSchema, GroupPreferencesResponseSchema } = require('./groupPreferencesSchema');
 
 module.exports = {
   BaseResponseSchema,
   TripGeneratorRequestSchema,
   TripGeneratorResponseSchema,
   BudgetOptimizerRequestSchema,
-  BudgetOptimizerResponseSchema
+  BudgetOptimizerResponseSchema,
+  ReplannerRequestSchema,
+  ReplannerResponseSchema,
+  RouteOptimizerRequestSchema,
+  RouteOptimizerResponseSchema,
+  CopilotRequestSchema,
+  CopilotResponseSchema,
+  WhatIfRequestSchema,
+  WhatIfResponseSchema,
+  PackingRequestSchema,
+  PackingResponseSchema,
+  GroupPreferencesRequestSchema,
+  GroupPreferencesResponseSchema
 };
