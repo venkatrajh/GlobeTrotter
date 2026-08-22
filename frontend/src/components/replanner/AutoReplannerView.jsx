@@ -16,7 +16,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-8 text-left animate-in fade-in relative z-10">
       {/* Calm & Reassuring Hero with Liquid Glass */}
       <div className="glass-primary rounded-3xl p-6 sm:p-10 shadow-2xl border">
-        <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
+        <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
           <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> CALM ASSIST • AUTO-REPLANNER
         </div>
         <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 mb-2 uppercase">
@@ -41,7 +41,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
 
         {/* Side-by-Side Comparison: Before vs After */}
         <div className="mt-8">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-4">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-4">
             HERE'S WHAT WE RECOMMEND:
           </span>
 
@@ -49,7 +49,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
             {/* BEFORE */}
             <div className="p-6 rounded-2xl glass-secondary border space-y-4 shadow-xs">
               <div className="flex items-center justify-between border-b border-zinc-200/60 dark:border-zinc-700/60 pb-3">
-                <span className="text-xs font-mono font-bold text-zinc-500 uppercase">
+                <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400 uppercase">
                   BEFORE (ORIGINAL PLAN)
                 </span>
                 <Badge variant="outline" size="sm">
@@ -58,7 +58,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
               </div>
 
               <div className="p-4 rounded-xl glass-secondary border opacity-80">
-                <span className="text-xs font-mono font-bold text-zinc-500">2:00 PM</span>
+                <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400">2:00 PM</span>
                 <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 line-through mt-0.5">
                   Outdoor Museum & Garden
                 </h4>
@@ -81,7 +81,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
 
               <div className="space-y-3">
                 <div className="p-4 rounded-xl glass-primary border border-emerald-300/70 dark:border-emerald-800 shadow-xs">
-                  <span className="text-xs font-mono font-bold text-zinc-500">10:00 AM</span>
+                  <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400">10:00 AM</span>
                   <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50 mt-0.5">
                     Outdoor Museum & Garden
                   </h4>
@@ -91,7 +91,7 @@ export const AutoReplannerView = ({ onApply, onDismiss }) => {
                 </div>
 
                 <div className="p-4 rounded-xl glass-primary border border-emerald-300/70 dark:border-emerald-800 shadow-xs">
-                  <span className="text-xs font-mono font-bold text-zinc-500">2:30 PM</span>
+                  <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400">2:30 PM</span>
                   <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50 mt-0.5">
                     Indoor Modern Art Museum
                   </h4>

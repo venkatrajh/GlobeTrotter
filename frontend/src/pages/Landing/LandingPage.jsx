@@ -194,7 +194,7 @@ export const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-6 sm:px-12 py-8 w-full border-t border-zinc-200/60 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4 z-10">
+      <footer className="max-w-7xl mx-auto px-6 sm:px-12 py-8 w-full border-t border-zinc-200/60 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-600 dark:text-zinc-400 gap-4 z-10">
         <div className="flex items-center gap-2">
           <span className="font-black text-zinc-950 dark:text-zinc-100 uppercase">GLOBETROTTER</span>
           <span>•</span>

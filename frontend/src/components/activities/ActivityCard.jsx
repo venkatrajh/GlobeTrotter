@@ -56,7 +56,7 @@ export const ActivityCard = ({
 
           {/* Explicit Location Text */}
           <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-600 dark:text-zinc-400">
-            <MapPin className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 shrink-0" />
             <span className="truncate">{locationText}</span>
           </div>
 
@@ -70,7 +70,7 @@ export const ActivityCard = ({
       <div className="px-6 pb-6 pt-3 border-t border-zinc-200/50 dark:border-zinc-800/80 flex items-center justify-between">
         <div className="flex items-center gap-3 text-xs font-bold text-zinc-700 dark:text-zinc-300">
           <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5 text-zinc-500" /> {activity.duration}
+            <Clock className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" /> {activity.duration}
           </span>
           <span>•</span>
           <span className="text-zinc-950 dark:text-zinc-50 font-black">

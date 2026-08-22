@@ -92,7 +92,7 @@ export const AIGeneratorSentenceForm = ({ onGenerate }) => {
 
       {/* Interests Chips */}
       <div className="mt-8 space-y-3">
-        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
           I ENJOY:
         </span>
         <div className="flex flex-wrap gap-2.5">
@@ -120,7 +120,7 @@ export const AIGeneratorSentenceForm = ({ onGenerate }) => {
 
       {/* Travel Pace Selector */}
       <div className="mt-8 space-y-3">
-        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
           MY PACE:
         </span>
         <div className="grid grid-cols-3 gap-3">
@@ -194,7 +194,7 @@ export const AIProgressVisualizer = ({ onComplete }) => {
 
   return (
     <div className="w-full max-w-2xl mx-auto glass-primary rounded-3xl p-8 sm:p-12 shadow-2xl text-left animate-in fade-in border">
-      <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
+      <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" /> AI GENERATOR ACTIVE
       </div>
       <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 mb-8 uppercase">
@@ -269,7 +269,7 @@ export const AIResultView = ({ generatedTrip, onAccept, onCustomize, onRegenerat
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-8 text-left animate-in fade-in zoom-in-95 duration-300">
       {/* Result Hero */}
       <div className="glass-primary rounded-3xl p-6 sm:p-10 shadow-2xl border">
-        <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
+        <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
           <Sparkles className="w-4 h-4 text-zinc-950 dark:text-zinc-100" /> AI PLANNING COMPLETE
         </div>
         <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 mb-6 uppercase">
@@ -286,21 +286,21 @@ export const AIResultView = ({ generatedTrip, onAccept, onCustomize, onRegenerat
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-4 p-5 rounded-2xl glass-secondary border mb-8 text-center shadow-xs">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">DURATION</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">DURATION</span>
             <p className="text-lg sm:text-2xl font-black text-zinc-950 dark:text-zinc-50 mt-1">
               {generatedTrip.durationDays} DAYS
             </p>
           </div>
 
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">OPTIMIZED BUDGET</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">OPTIMIZED BUDGET</span>
             <p className="text-lg sm:text-2xl font-black text-zinc-950 dark:text-zinc-50 mt-1">
               ₹{generatedTrip.totalBudget.toLocaleString()}
             </p>
           </div>
 
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">ACTIVITIES</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">ACTIVITIES</span>
             <p className="text-lg sm:text-2xl font-black text-zinc-950 dark:text-zinc-50 mt-1">
               {generatedTrip.activitiesCount} CURATED
             </p>
@@ -309,7 +309,7 @@ export const AIResultView = ({ generatedTrip, onAccept, onCustomize, onRegenerat
 
         {/* Visual Day Breakdown */}
         <div className="space-y-3 mb-8">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-4">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-4">
             ITINERARY PACING MAP:
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

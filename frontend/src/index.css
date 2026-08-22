@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 @import "./styles/theme.css";
 
 @layer base {
@@ -45,6 +46,14 @@
 }
 
 .text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-caption {
   color: var(--text-tertiary);
 }
 
@@ -95,6 +104,24 @@
   }
 }
 
+@keyframes plane-drift {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(4deg);
+  }
+}
+
+@keyframes compass-needle-spin {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
 .animate-ambient-1 {
   animation: ambient-float-1 12s ease-in-out infinite;
 }
@@ -113,6 +140,14 @@
 
 .animate-dash-move {
   animation: dash-move 2s linear infinite;
+}
+
+.animate-plane-drift {
+  animation: plane-drift 14s ease-in-out infinite;
+}
+
+.animate-compass-needle {
+  animation: compass-needle-spin 24s ease-in-out infinite;
 }
 
 /* Custom scrollbar */

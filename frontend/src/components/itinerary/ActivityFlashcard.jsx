@@ -35,7 +35,7 @@ export const ActivityFlashcard = ({
               <span>{activity.category}</span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-zinc-400" /> {activity.duration}
+                <Clock className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" /> {activity.duration}
               </span>
               <span>•</span>
               <span className="text-zinc-950 dark:text-zinc-50 font-black">
@@ -55,7 +55,7 @@ export const ActivityFlashcard = ({
           <button
             type="button"
             onClick={() => setShowMenu(!showMenu)}
-            className="p-2 rounded-xl text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-white/50 dark:hover:bg-zinc-800/60 transition-colors"
+            className="p-2 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-white/50 dark:hover:bg-zinc-800/60 transition-colors"
             aria-label="Activity options"
           >
             <MoreVertical className="w-4 h-4" />

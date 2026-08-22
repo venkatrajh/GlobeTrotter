@@ -79,7 +79,7 @@ export const TRIPS_DATA = [
             category: 'Sightseeing',
             time: '09:00 AM',
             duration: '2 Hours',
-            cost: 800,
+            cost: 1200,
             icon: '🗼',
             location: 'Minato City, Tokyo',
             description: 'Visit the main observation deck for expansive morning views over Tokyo skyline.'
@@ -92,7 +92,7 @@ export const TRIPS_DATA = [
             category: 'Food',
             time: '01:00 PM',
             duration: '3 Hours',
-            cost: 1500,
+            cost: 4800,
             icon: '🍜',
             location: 'Chuo City, Tokyo',
             description: 'Fresh sushi, tamagoyaki tasting, and matcha ice cream through bustling market stalls.'
@@ -105,14 +105,14 @@ export const TRIPS_DATA = [
             category: 'Culture',
             time: '07:00 PM',
             duration: '2 Hours',
-            cost: 600,
+            cost: 2400,
             icon: '🌆',
             location: 'Shibuya Crossing, Tokyo',
             description: 'Walk across the world famous crossing and explore cozy neon alleyways.'
           }
         ],
         dayTotalHours: 7,
-        dayTotalCost: 2900
+        dayTotalCost: 8400
       },
       2: {
         dayNumber: 2,
@@ -126,7 +126,7 @@ export const TRIPS_DATA = [
             category: 'Culture',
             time: '09:30 AM',
             duration: '2.5 Hours',
-            cost: 1200,
+            cost: 1400,
             icon: '⛩',
             location: 'Asakusa, Tokyo',
             description: 'Ancient Buddhist temple, five-story pagoda and traditional shopping street.'
@@ -139,7 +139,7 @@ export const TRIPS_DATA = [
             category: 'Adventure',
             time: '02:00 PM',
             duration: '3 Hours',
-            cost: 950,
+            cost: 3600,
             icon: '👾',
             location: 'Akihabara, Tokyo',
             description: 'Explore multi-level retro gaming, anime figurines, and electronics.'
@@ -152,14 +152,14 @@ export const TRIPS_DATA = [
             category: 'Food',
             time: '07:30 PM',
             duration: '2.5 Hours',
-            cost: 1800,
+            cost: 4500,
             icon: '🍢',
             location: 'Shinjuku, Tokyo',
             description: 'Intimate yakitori skewers and draft beer in nostalgic lantern-lit alley.'
           }
         ],
         dayTotalHours: 8,
-        dayTotalCost: 3950
+        dayTotalCost: 9500
       },
       3: {
         dayNumber: 3,
@@ -186,7 +186,7 @@ export const TRIPS_DATA = [
             category: 'Culture',
             time: '02:00 PM',
             duration: '3 Hours',
-            cost: 1600,
+            cost: 2800,
             icon: '🏛️',
             location: 'Roppongi Hills, Tokyo',
             description: 'Contemporary modern art exhibitions with high-rise observation deck.'
@@ -199,14 +199,14 @@ export const TRIPS_DATA = [
             category: 'Sightseeing',
             time: '06:30 PM',
             duration: '2.5 Hours',
-            cost: 2200,
+            cost: 4200,
             icon: '✨',
             location: 'Ginza, Tokyo',
             description: 'Luxury architecture promenade and authentic ramen dinner.'
           }
         ],
         dayTotalHours: 7.5,
-        dayTotalCost: 4300
+        dayTotalCost: 7500
       }
     },
 
@@ -310,6 +310,28 @@ export const TRIPS_DATA = [
       { id: 'e-stop-1', cityId: 'paris', cityName: 'Paris', code: 'CDG', nights: 5, dateRange: 'Jun 10 – Jun 15', transportToNext: { mode: 'train', icon: '🚅', label: 'TGV Lyria', duration: '3h 10m', distance: '490 km' } },
       { id: 'e-stop-2', cityId: 'rome', cityName: 'Rome', code: 'FCO', nights: 5, dateRange: 'Jun 15 – Jun 20', transportToNext: { mode: 'train', icon: '🚅', label: 'Frecciarossa', duration: '1h 30m', distance: '270 km' } },
       { id: 'e-stop-3', cityId: 'florence', cityName: 'Florence', code: 'FLR', nights: 4, dateRange: 'Jun 20 – Jun 24', transportToNext: null }
+    ],
+    budgetBreakdown: [
+      { category: 'Hotels & Villas', icon: '🏨', percentage: 40, planned: 128000, spent: 90000, color: 'bg-zinc-900' },
+      { category: 'Trains & Flights', icon: '🚆', percentage: 25, planned: 80000, spent: 62000, color: 'bg-zinc-700' },
+      { category: 'Sightseeing & Museum Passes', icon: '🎟', percentage: 20, planned: 64000, spent: 38000, color: 'bg-zinc-500' },
+      { category: 'Dining & Cafes', icon: '🍷', percentage: 15, planned: 48000, spent: 25000, color: 'bg-zinc-400' }
+    ],
+    smartInsights: [
+      {
+        id: 'ins-eu-1',
+        title: 'Eurail Global Pass Saver',
+        description: 'Consolidating individual TGV and Frecciarossa tickets into a continuous Eurail Pass saves on high-speed transit legs.',
+        potentialSaving: 9200,
+        type: 'savings'
+      },
+      {
+        id: 'ins-eu-2',
+        title: 'Museum Pass Combo Paris-Rome',
+        description: 'Booking bundled museum combo passes in advance skips queues and unlocks 15% discount.',
+        potentialSaving: 4300,
+        type: 'alert'
+      }
     ]
   },
   {
@@ -335,6 +357,28 @@ export const TRIPS_DATA = [
       { id: 'k-stop-1', cityId: 'kochi', cityName: 'Kochi', code: 'COK', nights: 2, dateRange: 'Oct 05 – Oct 07', transportToNext: { mode: 'car', icon: '🚗', label: 'Scenic Drive', duration: '3h 45m', distance: '130 km' } },
       { id: 'k-stop-2', cityId: 'munnar', cityName: 'Munnar', code: 'MNR', nights: 3, dateRange: 'Oct 07 – Oct 10', transportToNext: { mode: 'car', icon: '🚗', label: 'Hill Highway', duration: '4h 00m', distance: '160 km' } },
       { id: 'k-stop-3', cityId: 'alleppey', cityName: 'Alleppey', code: 'ALP', nights: 2, dateRange: 'Oct 10 – Oct 12', transportToNext: null }
+    ],
+    budgetBreakdown: [
+      { category: 'Resorts & Houseboats', icon: '🌴', percentage: 40, planned: 26000, spent: 18000, color: 'bg-zinc-900' },
+      { category: 'Chauffeur & Transfers', icon: '🚗', percentage: 25, planned: 16250, spent: 11000, color: 'bg-zinc-700' },
+      { category: 'Plantation & Backwater Tours', icon: '🛶', percentage: 20, planned: 13000, spent: 8000, color: 'bg-zinc-500' },
+      { category: 'Coastal & Kerala Cuisine', icon: '🍛', percentage: 15, planned: 9750, spent: 5000, color: 'bg-zinc-400' }
+    ],
+    smartInsights: [
+      {
+        id: 'ins-ke-1',
+        title: 'Early Houseboat Booking',
+        description: 'Direct booking for private overnight Alleppey cruise unlocks complementary sunset kayaking.',
+        potentialSaving: 2800,
+        type: 'savings'
+      },
+      {
+        id: 'ins-ke-2',
+        title: 'Munnar Spice Tour Bundle',
+        description: 'Combining tea factory entry with Ayurvedic herbal spa experience saves 18%.',
+        potentialSaving: 1400,
+        type: 'alert'
+      }
     ]
   }
 ];

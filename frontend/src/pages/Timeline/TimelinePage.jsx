@@ -39,7 +39,7 @@ export const TimelinePage = () => {
           <button
             type="button"
             onClick={() => navigate(`/trips/${currentTrip.id}`)}
-            className="text-xs font-bold uppercase tracking-wider text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-2 hover:underline"
+            className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-2 hover:underline"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Overview
           </button>
@@ -129,10 +129,10 @@ export const TimelinePage = () => {
         {/* Day Total Divider & Summary */}
         <div className="mt-10 pt-6 border-t-2 border-dashed border-zinc-200/70 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
               DAY TOTAL METRICS
             </span>
-            <p className="text-xs text-zinc-500 mt-0.5 font-medium">Calculated from scheduled itinerary slots</p>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5 font-medium">Calculated from scheduled itinerary slots</p>
           </div>
 
           <div className="flex items-center gap-6 font-mono font-black text-sm sm:text-base text-zinc-950 dark:text-zinc-50">

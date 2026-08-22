@@ -31,7 +31,7 @@ export const CalendarPage = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
             EXPEDITION SCHEDULE
           </span>
           <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-950 dark:text-zinc-50 mt-1">
@@ -46,14 +46,14 @@ export const CalendarPage = () => {
           <div className="flex items-center gap-2 glass-secondary border rounded-2xl p-1.5 shadow-xs">
             <button
               type="button"
-              className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100"
+              className="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <span className="text-xs font-mono font-bold px-2 text-zinc-950 dark:text-zinc-50">{currentMonth}</span>
             <button
               type="button"
-              className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100"
+              className="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -86,7 +86,7 @@ export const CalendarPage = () => {
                 className={`min-h-[90px] p-2 rounded-2xl border transition-all flex flex-col justify-between ${
                   event
                     ? 'border-zinc-400 dark:border-zinc-600 glass-secondary cursor-pointer hover:shadow-lg hover:scale-102'
-                    : 'border-zinc-200/40 dark:border-zinc-800/40 bg-transparent text-zinc-400'
+                    : 'border-zinc-200/40 dark:border-zinc-800/40 bg-transparent text-zinc-600 dark:text-zinc-400'
                 }`}
               >
                 <span className="text-xs font-mono font-bold text-zinc-950 dark:text-zinc-50">{day}</span>

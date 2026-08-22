@@ -74,7 +74,7 @@ export const ActivityDetailModal = ({
               <Clock className="w-4 h-4" />
             </div>
             <div>
-              <span className="text-[10px] uppercase font-bold text-zinc-400">Duration</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-600 dark:text-zinc-400">Duration</span>
               <p className="text-xs font-bold text-zinc-900 dark:text-zinc-100">{activity.duration}</p>
             </div>
           </div>
@@ -84,7 +84,7 @@ export const ActivityDetailModal = ({
               <span className="text-xs font-bold">💰</span>
             </div>
             <div>
-              <span className="text-[10px] uppercase font-bold text-zinc-400">Estimated Cost</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-600 dark:text-zinc-400">Estimated Cost</span>
               <p className="text-xs font-bold text-zinc-900 dark:text-zinc-100">
                 {fmtCurrency(activity.cost, activity.countryName)}
               </p>
@@ -94,7 +94,7 @@ export const ActivityDetailModal = ({
 
         {/* Short Activity Description */}
         <div className="mb-5">
-          <span className="text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 block mb-1">
             Activity Overview
           </span>
           <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">

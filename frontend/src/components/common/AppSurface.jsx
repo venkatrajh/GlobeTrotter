@@ -16,7 +16,7 @@ export const AppSurface = ({
     primary: 'glass-primary',
     secondary: 'glass-secondary',
     floating: 'glass-floating',
-    none: 'bg-white/80 dark:bg-zinc-900/80'
+    none: 'bg-slate-50/90 dark:bg-zinc-900/80'
   };
 
   const classes = twMerge(

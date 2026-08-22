@@ -64,7 +64,7 @@ export const ItineraryBuilderPage = () => {
           <button
             type="button"
             onClick={() => navigate(`/trips/${currentTrip.id}`)}
-            className="text-xs font-bold uppercase tracking-wider text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-2 hover:underline"
+            className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-2 hover:underline"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to {currentTrip.title}
           </button>
@@ -72,7 +72,7 @@ export const ItineraryBuilderPage = () => {
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-950 dark:text-zinc-50">
               DAY {String(activeDay).padStart(2, '0')}
             </h1>
-            <span className="text-xl sm:text-2xl font-black text-zinc-400 uppercase">
+            <span className="text-xl sm:text-2xl font-black text-zinc-600 dark:text-zinc-400 uppercase">
               • {currentDayData.city}
             </span>
             {currentDayData.date && (

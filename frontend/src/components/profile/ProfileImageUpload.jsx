@@ -71,7 +71,7 @@ export const ProfileImageUpload = ({
 
   return (
     <div className={clsx('flex flex-col gap-4 text-left', className)}>
-      <label className="text-xs font-mono uppercase font-bold text-zinc-400 tracking-wider">
+      <label className="text-xs font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 tracking-wider">
         PROFILE PHOTO
       </label>
 
