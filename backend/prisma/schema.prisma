@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  trips     Trip[]
+}
+
+model Trip {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  ownerId     String
+  owner       User     @relation(fields: [ownerId], references: [id])
+  startDate   DateTime
+  endDate     DateTime
+  destination String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  stops       TripStop[]
+  budgetItems BudgetItem[]
+  sharedTrips SharedTrip[]
+}
+
+model City {
+  id          String   @id @default(uuid())
+  name        String
+  country     String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  activities  Activity[]
+  tripStops   TripStop[]
+}
+
+model Activity {
+  id            String   @id @default(uuid())
+  name          String
+  description   String?
+  category      String
+  duration      Int?     // duration in minutes
+  estimatedCost Float?
+  cityId        String
+  city          City     @relation(fields: [cityId], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  stopActivities StopActivity[]
+}
+
+model TripStop {
+  id        String   @id @default(uuid())
+  tripId    String
+  trip      Trip     @relation(fields: [tripId], references: [id])
+  cityId    String
+  city      City     @relation(fields: [cityId], references: [id])
+  startDate DateTime
+  endDate   DateTime
+  order     Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  activities StopActivity[]
+}
+
+model StopActivity {
+  id            String   @id @default(uuid())
+  tripStopId    String
+  tripStop      TripStop @relation(fields: [tripStopId], references: [id])
+  activityId    String
+  activity      Activity @relation(fields: [activityId], references: [id])
+  scheduledDate DateTime?
+  order         Int
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model BudgetItem {
+  id          String   @id @default(uuid())
+  tripId      String
+  trip        Trip     @relation(fields: [tripId], references: [id])
+  amount      Float
+  category    String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SharedTrip {
+  id        String   @id @default(uuid())
+  tripId    String
+  trip      Trip     @relation(fields: [tripId], references: [id])
+  slug      String   @unique
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
