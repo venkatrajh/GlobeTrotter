@@ -7,6 +7,10 @@ const BaseResponseSchema = z.object({
   message: z.string().optional()
 });
 
+const { TripGeneratorRequestSchema, TripGeneratorResponseSchema } = require('./tripGeneratorSchema');
+
 module.exports = {
-  BaseResponseSchema
+  BaseResponseSchema,
+  TripGeneratorRequestSchema,
+  TripGeneratorResponseSchema
 };

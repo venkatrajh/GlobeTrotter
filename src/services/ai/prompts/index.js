@@ -3,9 +3,9 @@
  * Prompts should be versioned, e.g., tripGeneratorPromptV1.
  */
 
-// Phase 1 foundation. Empty templates ready for Phase 2.
+const { buildTripGeneratorPrompt } = require('./tripGeneratorPrompt');
 
 module.exports = {
-  // tripGeneratorPromptV1: require('./tripGeneratorPrompt'),
+  buildTripGeneratorPrompt,
   // copilotPromptV1: require('./copilotPrompt'),
 };

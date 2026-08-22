@@ -20,7 +20,7 @@ describe('AI Provider Abstraction', () => {
     const response = await provider.generateStructuredResponse('generate-trip for Tokyo', null);
     
     expect(response).toBeDefined();
-    expect(response.estimated_total).toBe(50000);
+    expect(response.estimated_total).toBe(15000);
     expect(response.trip_summary).toContain('Tokyo');
   });
 

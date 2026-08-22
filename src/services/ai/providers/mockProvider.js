@@ -19,12 +19,48 @@ class MockProvider extends AIProvider {
 
     // Basic deterministic routing based on prompt keywords.
     // In Phase 2, this will be expanded to return realistic mock data.
-    if (prompt.includes('generate-trip')) {
+    if (prompt.includes('generate-trip') || prompt.includes('Destination:')) {
+      // Create dynamic mock response based on prompt requested days (defaults to 3 if not found)
+      const daysMatch = prompt.match(/Number of Days: (\d+)/);
+      const requestedDays = daysMatch ? parseInt(daysMatch[1], 10) : 3;
+      const currencyMatch = prompt.match(/Budget: \d+ ([A-Z]{3})/);
+      const currency = currencyMatch ? currencyMatch[1] : 'INR';
+
+      const days = [];
+      for (let i = 1; i <= requestedDays; i++) {
+        days.push({
+          day: i,
+          city: "Tokyo",
+          activities: [
+            {
+              name: `Morning Mock Activity ${i}`,
+              category: "Sightseeing",
+              suggested_time: "09:00",
+              duration_minutes: 120,
+              estimated_cost: 2000
+            },
+            {
+              name: `Afternoon Mock Activity ${i}`,
+              category: "Culture",
+              suggested_time: "14:00",
+              duration_minutes: 180,
+              estimated_cost: 3000
+            }
+          ],
+          estimated_daily_cost: 5000,
+          daily_summary: `A lovely day ${i} in Tokyo.`
+        });
+      }
+
       return {
-        trip_summary: "A wonderful mock trip to Tokyo.",
-        estimated_total: 50000,
-        days: [],
-        warnings: ["This is a mock response."]
+        trip_summary: `A wonderful ${requestedDays}-day mock trip to Tokyo.`,
+        destination: "Tokyo",
+        estimated_total: requestedDays * 5000,
+        currency: currency,
+        days: days,
+        budget_status: "budget_unknown",
+        warnings: ["This is a mock response."],
+        assumptions: ["Prices are simulated for mock purposes."]
       };
     }
 
