@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "./styles/theme.css";
+
+@layer base {
+  * {
+    border-color: var(--border);
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.25s ease, box-shadow 0.35s ease;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+
+/* Custom UI Utilities */
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-elevated {
+  background-color: var(--surface-elevated);
+}
+
+.bg-surface-muted {
+  background-color: var(--surface-muted);
+}
+
+.bg-surface-dark {
+  background-color: var(--surface-dark);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.border-theme {
+  border-color: var(--border);
+}
+
+.border-theme-light {
+  border-color: var(--border-light);
+}
+
+/* 3D Ambient World Keyframes & Utilities */
+@keyframes ambient-float-1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-24px) rotate(4deg) scale(1.03);
+  }
+}
+
+@keyframes ambient-float-2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(20px) rotate(-5deg) scale(0.97);
+  }
+}
+
+@keyframes ambient-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.98); }
+}
+
+@keyframes dash-move {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.animate-ambient-1 {
+  animation: ambient-float-1 12s ease-in-out infinite;
+}
+
+.animate-ambient-2 {
+  animation: ambient-float-2 16s ease-in-out infinite;
+}
+
+.animate-ambient-orbit {
+  animation: ambient-orbit 45s linear infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-dash-move {
+  animation: dash-move 2s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
