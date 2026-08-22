@@ -8,9 +8,12 @@ const BaseResponseSchema = z.object({
 });
 
 const { TripGeneratorRequestSchema, TripGeneratorResponseSchema } = require('./tripGeneratorSchema');
+const { BudgetOptimizerRequestSchema, BudgetOptimizerResponseSchema } = require('./budgetOptimizerSchema');
 
 module.exports = {
   BaseResponseSchema,
   TripGeneratorRequestSchema,
-  TripGeneratorResponseSchema
+  TripGeneratorResponseSchema,
+  BudgetOptimizerRequestSchema,
+  BudgetOptimizerResponseSchema
 };

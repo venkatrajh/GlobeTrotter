@@ -4,8 +4,9 @@
  */
 
 const { buildTripGeneratorPrompt } = require('./tripGeneratorPrompt');
+const { buildBudgetOptimizerPrompt } = require('./budgetOptimizerPrompt');
 
 module.exports = {
   buildTripGeneratorPrompt,
-  // copilotPromptV1: require('./copilotPrompt'),
+  buildBudgetOptimizerPrompt
 };
