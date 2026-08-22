@@ -296,17 +296,151 @@ All endpoints are designed to accept JSON and return structured JSON conforming 
 - `INVALID_INPUT`: Validation failed.
 - `AI_RESPONSE_INVALID`: The AI returned structurally flawed output that could not be repaired.
 
-### 5. Budget Optimizer
-**Endpoint**: `POST /ai/optimize-budget`
-**Purpose**: Identify concrete ways to reduce costs when over budget.
+### 5. Smart Route Optimizer
+**Endpoint**: `POST /ai/optimize-route`
+**Purpose**: Reorders an itinerary's daily activities to minimize travel time/distance without moving activities across days.
 
-### 6. What-If Simulator
+**Request Schema**:
+```json
+{
+  "itinerary": {
+    "destination": "Tokyo",
+    "days": [...]
+  },
+  "preferences": {
+    "must_keep_activity_ids": [],
+    "fixed_time_activity_ids": []
+  },
+  "travel_metadata": [
+    {
+      "from_activity_id": "a1",
+      "to_activity_id": "a2",
+      "estimated_minutes": 20
+    }
+  ]
+}
+```
+
+**Response Schema**:
+```json
+{
+  "status": "optimized",
+  "changes": [
+    {
+      "day": 1,
+      "original_order": ["a1", "a2"],
+      "optimized_order": ["a2", "a1"],
+      "reason": "Saves 10 minutes of travel time."
+    }
+  ],
+  "estimated_travel_minutes_before": 30,
+  "estimated_travel_minutes_after": 20,
+  "estimated_savings_minutes": 10,
+  "itinerary": {...},
+  "warnings": []
+}
+```
+
+### 6. Travel Copilot
+**Endpoint**: `POST /ai/copilot`
+**Purpose**: Conversational travel assistant. Returns structured intents and actions.
+
+**Response Example**:
+```json
+{
+  "message": "You can explore Yoyogi Park...",
+  "intent": "activity_recommendation",
+  "suggestions": [...],
+  "related_activity_ids": ["a1"],
+  "actions": [
+    {
+      "type": "suggest_route_optimization",
+      "reason": "Adding this activity affects routing."
+    }
+  ],
+  "warnings": []
+}
+```
+
+### 7. What-If Simulator
 **Endpoint**: `POST /ai/what-if`
-**Purpose**: Simulate changes without modifying the real trip.
+**Purpose**: Allows users to simulate changes to an itinerary (e.g. `budget_change`, `add_day`) without mutating the original.
 
-### 7. Packing Assistant
-**Endpoint**: `POST /ai/packing-list`
-**Purpose**: Generate a personalized packing list based on destination, dates, and weather.
+**Response Example**:
+```json
+{
+  "scenario": "remove_activity",
+  "summary": "Removing Tokyo Tower saves 3000 INR.",
+  "original_total": 5000,
+  "projected_total": 2000,
+  "cost_difference": -3000,
+  "changes": [...],
+  "itinerary": {...},
+  "warnings": []
+}
+```
+
+### 8. Packing Assistant
+**Endpoint**: `POST /ai/packing-assistant`
+**Purpose**: Generate a contextual packing list.
+
+**Response Example**:
+```json
+{
+  "categories": [
+    {
+      "name": "Clothing",
+      "items": [{"name": "T-shirts", "quantity": 7}]
+    }
+  ],
+  "essentials": ["Passport"],
+  "activity_specific": ["Hiking Boots"],
+  "optional_items": ["Camera"],
+  "warnings": ["Weather context unavailable."]
+}
+```
+
+### 9. Group Preference Engine
+**Endpoint**: `POST /ai/group-preferences`
+**Purpose**: Resolve competing preferences in group trips.
+
+**Response Example**:
+```json
+{
+  "consensus": {
+    "interests": ["culture", "food"],
+    "pace": "balanced",
+    "budget": 30000
+  },
+  "member_satisfaction": [...],
+  "conflicts": [...],
+  "recommendations": [...],
+  "warnings": []
+}
+```
 
 ---
-*Note: This is a living document and schemas will be detailed out as implementation progresses.*
+
+## Unified AI Error Model
+
+If any service encounters an error, it returns a standard format:
+```json
+{
+  "error": {
+    "code": "AI_VALIDATION_ERROR",
+    "message": "The AI response did not match the required structure.",
+    "retryable": false,
+    "details": {}
+  }
+}
+```
+
+**Common Error Codes**:
+- `AI_PROVIDER_ERROR`: LLM backend failure.
+- `AI_VALIDATION_ERROR`: Zod schema validation failed after AI output.
+- `AI_INVALID_INPUT`: The client sent malformed input.
+- `AI_CONSTRAINT_CONFLICT`: A strictly enforced constraint (e.g. `must-keep`) was violated by the LLM.
+- `AI_REPAIR_FAILED`: The system attempted a repair loop but failed.
+
+---
+*Note: The AI service does NOT persist data. The backend owns persistence.*
