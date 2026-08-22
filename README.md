@@ -1,1 +1,1 @@
-# -GlobeTrotter
+# GlobeTrotter
