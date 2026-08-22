@@ -87,6 +87,87 @@ All endpoints are designed to accept JSON and return structured JSON conforming 
 }
 ```
 
+### 3. Budget Optimizer
+**Endpoint**: `POST /ai/optimize-budget`
+**Purpose**: Analyzes an itinerary and suggests actionable swaps or removals to meet a target budget.
+
+**Request Schema**:
+```json
+{
+  "budget": 50000,
+  "currency": "INR",
+  "itinerary": {
+    "destination": "Tokyo",
+    "days": [
+      {
+        "day": 1,
+        "city": "Tokyo",
+        "activities": [
+          {
+            "id": "a1",
+            "name": "Premium Attraction",
+            "category": "attraction",
+            "estimated_cost": 5000,
+            "duration_minutes": 180
+          }
+        ]
+      }
+    ]
+  },
+  "preferences": {
+    "travel_style": "balanced",
+    "interests": ["food"],
+    "constraints": [],
+    "must_keep_activity_ids": ["a2"]
+  }
+}
+```
+
+**Response Schema**:
+```json
+{
+  "summary": "Your itinerary is ₹12,000 over budget. Here are suggestions.",
+  "current_total": 62000,
+  "target_budget": 50000,
+  "over_budget_by": 12000,
+  "potential_savings": 4000,
+  "projected_total": 58000,
+  "currency": "INR",
+  "suggestions": [
+    {
+      "id": "mock-sug-1",
+      "type": "activity_swap",
+      "priority": "high",
+      "reason": "This premium attraction is very expensive.",
+      "current_activity_id": "a1",
+      "current_activity_name": "Premium Attraction",
+      "suggested_replacement": {
+        "name": "Local Museum",
+        "category": "attraction",
+        "estimated_cost": 1000
+      },
+      "current_cost": 5000,
+      "replacement_cost": 1000,
+      "estimated_savings": 4000,
+      "tradeoffs": [
+        "Less premium experience"
+      ]
+    }
+  ],
+  "warnings": [],
+  "assumptions": []
+}
+```
+
+**Notes on Budget Optimizer**:
+- The backend/frontend MUST NOT apply these suggestions directly to the DB without user consent. These are *proposed* changes.
+- `potential_savings`, `projected_total`, and `over_budget_by` are always re-calculated deterministically. The LLM's arithmetic is overridden for accuracy.
+- Any suggestions affecting an activity listed in `must_keep_activity_ids` are automatically stripped out.
+
+**Errors**:
+- `INVALID_INPUT`: Request validation failed (e.g., negative budget).
+- `AI_RESPONSE_INVALID`: LLM generated malformed output or failed validation constraints and could not be repaired.
+
 ### 3. Auto-Replanner
 **Endpoint**: `POST /ai/replan`
 **Purpose**: Intelligently modify an itinerary when something changes (e.g., weather).

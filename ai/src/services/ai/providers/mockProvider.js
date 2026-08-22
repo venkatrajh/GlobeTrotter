@@ -64,6 +64,44 @@ class MockProvider extends AIProvider {
       };
     }
 
+    if (prompt.includes('generate-budget-optimization') || prompt.includes('budget optimizer')) {
+      const currentTotalMatch = prompt.match(/"estimated_cost":\s*(\d+)/g);
+      let simulatedCurrentTotal = 62000; // default mock overage
+      let targetBudgetMatch = prompt.match(/Target Budget: (\d+)/);
+      let targetBudget = targetBudgetMatch ? parseInt(targetBudgetMatch[1], 10) : 50000;
+
+      return {
+        summary: "This is a mock budget optimization. Your itinerary is over budget.",
+        current_total: simulatedCurrentTotal,
+        target_budget: targetBudget,
+        over_budget_by: Math.max(0, simulatedCurrentTotal - targetBudget),
+        potential_savings: 4000,
+        projected_total: simulatedCurrentTotal - 4000,
+        currency: "INR",
+        suggestions: [
+          {
+            id: "mock-sug-1",
+            type: "activity_swap",
+            priority: "high",
+            reason: "This premium attraction is very expensive.",
+            current_activity_id: "a1",
+            current_activity_name: "Premium Attraction",
+            suggested_replacement: {
+              name: "Local Museum",
+              category: "attraction",
+              estimated_cost: 1000
+            },
+            current_cost: 5000,
+            replacement_cost: 1000,
+            estimated_savings: 4000,
+            tradeoffs: ["Less premium experience"]
+          }
+        ],
+        warnings: ["Mock response."],
+        assumptions: ["Costs are simulated."]
+      };
+    }
+
     if (prompt.includes('copilot')) {
       return {
         message: "Mock copilot acknowledges your request.",
