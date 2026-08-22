@@ -168,13 +168,133 @@ All endpoints are designed to accept JSON and return structured JSON conforming 
 - `INVALID_INPUT`: Request validation failed (e.g., negative budget).
 - `AI_RESPONSE_INVALID`: LLM generated malformed output or failed validation constraints and could not be repaired.
 
-### 3. Auto-Replanner
-**Endpoint**: `POST /ai/replan`
-**Purpose**: Intelligently modify an itinerary when something changes (e.g., weather).
+### 4. Auto-Replanner
+**Endpoint**: `POST /ai/replan-trip`
+**Purpose**: Intelligently modifies an existing itinerary to accommodate a disruption (e.g., delay, activity unavailable) with minimal changes.
 
-### 4. Route Optimization
-**Endpoint**: `POST /ai/optimize-route`
-**Purpose**: Reduce unnecessary travel between activities.
+**Request Schema**:
+```json
+{
+  "itinerary": {
+    "destination": "Tokyo",
+    "days": [
+      {
+        "day": 1,
+        "city": "Tokyo",
+        "activities": [
+          {
+            "id": "a1",
+            "name": "Meiji Shrine",
+            "category": "culture",
+            "suggested_time": "09:00",
+            "duration_minutes": 120,
+            "estimated_cost": 0,
+            "location": "Shibuya"
+          },
+          {
+            "id": "a2",
+            "name": "Tokyo Tower",
+            "category": "attraction",
+            "suggested_time": "13:00",
+            "duration_minutes": 120,
+            "estimated_cost": 3000,
+            "location": "Minato"
+          }
+        ]
+      }
+    ]
+  },
+  "disruption": {
+    "type": "activity_unavailable",
+    "description": "Tokyo Tower is unavailable today.",
+    "affected_activity_id": "a2",
+    "affected_day": 1
+  },
+  "preferences": {
+    "travel_style": "balanced",
+    "interests": ["culture"],
+    "constraints": [],
+    "must_keep_activity_ids": ["a1"]
+  },
+  "budget": 50000,
+  "currency": "INR"
+}
+```
+
+**Response Schema**:
+```json
+{
+  "status": "replanned",
+  "summary": "Tokyo Tower became unavailable, so the afternoon activity was replaced with a nearby cultural experience.",
+  "original_total": 12000,
+  "replanned_total": 10500,
+  "cost_difference": -1500,
+  "changes": [
+    {
+      "type": "replacement",
+      "day": 1,
+      "original_activity_id": "a2",
+      "original_activity_name": "Tokyo Tower",
+      "replacement_activity": {
+        "id": "replacement-1",
+        "name": "Mori Art Museum",
+        "category": "culture",
+        "suggested_time": "13:30",
+        "duration_minutes": 120,
+        "estimated_cost": 1500,
+        "location": "Roppongi"
+      },
+      "reason": "The original activity was unavailable and this alternative fits the available afternoon window.",
+      "tradeoffs": [
+        "Different type of experience"
+      ]
+    }
+  ],
+  "preserved_activity_ids": [
+    "a1"
+  ],
+  "warnings": [],
+  "assumptions": [],
+  "itinerary": {
+    "destination": "Tokyo",
+    "days": [
+      {
+        "day": 1,
+        "city": "Tokyo",
+        "activities": [
+          {
+            "id": "a1",
+            "name": "Meiji Shrine",
+            "category": "culture",
+            "suggested_time": "09:00",
+            "duration_minutes": 120,
+            "estimated_cost": 0,
+            "location": "Shibuya"
+          },
+          {
+            "id": "replacement-1",
+            "name": "Mori Art Museum",
+            "category": "culture",
+            "suggested_time": "13:30",
+            "duration_minutes": 120,
+            "estimated_cost": 1500,
+            "location": "Roppongi"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**Notes on Auto-Replanner**:
+- Valid Disruption Types: `activity_unavailable`, `delay`, `cancellation`, `user_change`, `late_arrival`, `time_constraint`, `weather_issue`, `custom`.
+- The system employs a "Minimal-Change" architecture. `preserved_activity_ids` explicitly tracks unaffected portions of the trip.
+- If the disruption necessitates modifying an activity strictly listed in `must_keep_activity_ids`, the system will abort the replan and return `"status": "constraint_conflict"`.
+
+**Errors**:
+- `INVALID_INPUT`: Validation failed.
+- `AI_RESPONSE_INVALID`: The AI returned structurally flawed output that could not be repaired.
 
 ### 5. Budget Optimizer
 **Endpoint**: `POST /ai/optimize-budget`

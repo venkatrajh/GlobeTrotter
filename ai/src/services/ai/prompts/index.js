@@ -5,8 +5,10 @@
 
 const { buildTripGeneratorPrompt } = require('./tripGeneratorPrompt');
 const { buildBudgetOptimizerPrompt } = require('./budgetOptimizerPrompt');
+const { buildReplannerPrompt } = require('./replannerPrompt');
 
 module.exports = {
   buildTripGeneratorPrompt,
-  buildBudgetOptimizerPrompt
+  buildBudgetOptimizerPrompt,
+  buildReplannerPrompt
 };

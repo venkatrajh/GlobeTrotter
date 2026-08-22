@@ -15,6 +15,7 @@ const TripGeneratorRequestSchema = z.object({
 
 // Output Schema structure for Activities
 const ActivitySchema = z.object({
+  id: z.string().optional(),
   name: z.string(),
   category: z.string(),
   description: z.string().optional(),

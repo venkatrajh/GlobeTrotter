@@ -102,6 +102,76 @@ class MockProvider extends AIProvider {
       };
     }
 
+    if (prompt.includes('replan-trip') || prompt.includes('Auto-Replanner')) {
+      return {
+        status: "replanned",
+        summary: "Tokyo Tower became unavailable, so the afternoon activity was replaced with a nearby cultural experience.",
+        original_total: 12000,
+        replanned_total: 10500,
+        cost_difference: -1500,
+        changes: [
+          {
+            type: "replacement",
+            day: 1,
+            original_activity_id: "a2",
+            original_activity_name: "Tokyo Tower",
+            replacement_activity: {
+              id: "replacement-1",
+              name: "Mori Art Museum",
+              category: "culture",
+              suggested_time: "13:30",
+              duration_minutes: 120,
+              estimated_cost: 1500,
+              location: "Roppongi"
+            },
+            reason: "The original activity was unavailable and this alternative fits the available afternoon window.",
+            tradeoffs: ["Different type of experience"]
+          }
+        ],
+        preserved_activity_ids: ["a1", "a3"],
+        warnings: [],
+        assumptions: [],
+        itinerary: {
+          destination: "Tokyo",
+          days: [
+            {
+              day: 1,
+              city: "Tokyo",
+              activities: [
+                {
+                  id: "a1",
+                  name: "Meiji Shrine",
+                  category: "culture",
+                  suggested_time: "09:00",
+                  duration_minutes: 120,
+                  estimated_cost: 0,
+                  location: "Shibuya"
+                },
+                {
+                  id: "replacement-1",
+                  name: "Mori Art Museum",
+                  category: "culture",
+                  suggested_time: "13:30",
+                  duration_minutes: 120,
+                  estimated_cost: 1500,
+                  location: "Roppongi"
+                },
+                {
+                  id: "a3",
+                  name: "Shibuya Crossing",
+                  category: "attraction",
+                  suggested_time: "16:00",
+                  duration_minutes: 60,
+                  estimated_cost: 0,
+                  location: "Shibuya"
+                }
+              ]
+            }
+          ]
+        }
+      };
+    }
+
     if (prompt.includes('copilot')) {
       return {
         message: "Mock copilot acknowledges your request.",
