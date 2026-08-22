@@ -45,7 +45,7 @@ export const AppLayout = () => {
 
             {/* Breadcrumb / Active Trip Context */}
             {activeTrip && (
-              <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-zinc-400">
+              <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
                 <NavLink to="/trips" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                   Trips
                 </NavLink>

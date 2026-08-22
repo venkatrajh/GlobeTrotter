@@ -44,7 +44,7 @@ export const DashboardPage = () => {
       {/* Top Greeting Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
             TRAVEL COMMAND CENTER
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase mt-1">
@@ -97,7 +97,7 @@ export const DashboardPage = () => {
 
             {/* TRANSIT CORRIDOR inside Secondary Liquid Glass */}
             <div className="p-6 rounded-2xl glass-secondary border shadow-xs">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 block mb-2 font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-400 block mb-2 font-bold">
                 TRANSIT CORRIDOR
               </span>
               <TransitCorridor stops={corridorStops} orientation="horizontal" />
@@ -107,13 +107,13 @@ export const DashboardPage = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-zinc-200/50 dark:border-zinc-800/50">
               <div className="flex flex-wrap items-center gap-6 text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300">
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4 text-zinc-400" /> {formattedStartDate} – {formattedEndDate}
+                  <Calendar className="w-4 h-4 text-zinc-600 dark:text-zinc-400" /> {formattedStartDate} – {formattedEndDate}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-zinc-400" /> {upcomingTrip.durationDays} DAYS
+                  <Clock className="w-4 h-4 text-zinc-600 dark:text-zinc-400" /> {upcomingTrip.durationDays} DAYS
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <IndianRupee className="w-4 h-4 text-zinc-400" /> {fmtCurrency(upcomingTrip.totalBudget, upcomingTrip.destination)}
+                  <IndianRupee className="w-4 h-4 text-zinc-600 dark:text-zinc-400" /> {fmtCurrency(upcomingTrip.totalBudget, upcomingTrip.destination)}
                 </span>
               </div>
 
@@ -134,19 +134,19 @@ export const DashboardPage = () => {
 
       {/* YOUR JOURNEY - Large Visual Stat Cards */}
       <div>
-        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-4">
+        <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-4">
           YOUR JOURNEY LIFETIME METRICS
         </span>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <Card padding="md" className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-2xl">✈</span>
-              <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">Total</span>
+              <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">Total</span>
             </div>
             <p className="text-3xl sm:text-4xl font-black text-zinc-950 dark:text-zinc-50">
               08
             </p>
-            <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">
+            <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block">
               Trips Planned
             </span>
           </Card>
@@ -154,12 +154,12 @@ export const DashboardPage = () => {
           <Card padding="md" className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-2xl">📍</span>
-              <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">Visited</span>
+              <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">Visited</span>
             </div>
             <p className="text-3xl sm:text-4xl font-black text-zinc-950 dark:text-zinc-50">
               15
             </p>
-            <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">
+            <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block">
               Cities Visited
             </span>
           </Card>
@@ -167,12 +167,12 @@ export const DashboardPage = () => {
           <Card padding="md" className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-2xl">🌍</span>
-              <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">Passports</span>
+              <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">Passports</span>
             </div>
             <p className="text-3xl sm:text-4xl font-black text-zinc-950 dark:text-zinc-50">
               06
             </p>
-            <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">
+            <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block">
               Countries
             </span>
           </Card>
@@ -180,12 +180,12 @@ export const DashboardPage = () => {
           <Card padding="md" className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-2xl">💰</span>
-              <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">Invested</span>
+              <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">Invested</span>
             </div>
             <p className="text-3xl sm:text-4xl font-black text-zinc-950 dark:text-zinc-50">
               {fmtCurrency(420000, '', { compact: true })}
             </p>
-            <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">
+            <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block">
               Travel Budget
             </span>
           </Card>
@@ -195,7 +195,7 @@ export const DashboardPage = () => {
       {/* RECENT JOURNEYS */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
             RECENT JOURNEYS
           </span>
           <Button
@@ -219,7 +219,7 @@ export const DashboardPage = () => {
       <div>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block">
+            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block">
               CURATED DESTINATIONS
             </span>
             <h3 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mt-0.5">
@@ -248,12 +248,12 @@ export const DashboardPage = () => {
               </div>
               <div className="flex-1 truncate">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-xs font-mono font-bold text-zinc-400 uppercase">{city.country}</span>
+                  <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400 uppercase">{city.country}</span>
                 </div>
                 <h4 className="text-base font-bold text-zinc-950 dark:text-zinc-50 group-hover:underline truncate">
                   {city.name}
                 </h4>
-                <p className="text-xs text-zinc-500 truncate mt-0.5">{city.tagline}</p>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 truncate mt-0.5">{city.tagline}</p>
               </div>
             </div>
           ))}

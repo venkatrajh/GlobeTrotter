@@ -74,7 +74,7 @@ export const AddActivityModal = ({
           className={`pb-3 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors ${
             activeTab === 'catalog'
               ? 'border-zinc-950 dark:border-zinc-100 text-zinc-950 dark:text-zinc-50'
-              : 'border-transparent text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200'
+              : 'border-transparent text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
           Discover Catalog
@@ -85,7 +85,7 @@ export const AddActivityModal = ({
           className={`pb-3 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors ${
             activeTab === 'custom'
               ? 'border-zinc-950 dark:border-zinc-100 text-zinc-950 dark:text-zinc-50'
-              : 'border-transparent text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200'
+              : 'border-transparent text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
           }`}
         >
           + Custom Activity

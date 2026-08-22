@@ -92,7 +92,7 @@ export const RouteVisualizer = ({
                 </div>
 
                 {interactive && (
-                  <span className="text-xs font-semibold text-zinc-400 group-hover:text-zinc-900">
+                  <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900">
                     {isSelected ? 'Selected' : 'View Plan →'}
                   </span>
                 )}
@@ -102,7 +102,7 @@ export const RouteVisualizer = ({
               {!isLast && (
                 <div className="flex items-center gap-4 my-1.5 pl-5">
                   <div className="w-0.5 h-12 bg-zinc-300 dark:bg-zinc-700 relative">
-                    <ArrowDown className="w-3.5 h-3.5 absolute -bottom-1.5 -left-[5.5px] text-zinc-400" />
+                    <ArrowDown className="w-3.5 h-3.5 absolute -bottom-1.5 -left-[5.5px] text-zinc-600 dark:text-zinc-400" />
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100/80 dark:bg-zinc-800/80 px-3 py-1.5 rounded-xl border border-zinc-200/60 dark:border-zinc-700/60 shadow-xs">
                     <TransportIcon type={transport?.mode || 'flight'} className="w-3.5 h-3.5 text-zinc-950 dark:text-zinc-100" />
@@ -139,7 +139,7 @@ export const RouteVisualizer = ({
                 <span className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 whitespace-nowrap">
                   {cityName}
                 </span>
-                <span className="text-[10px] text-zinc-400 font-semibold">
+                <span className="text-[10px] text-zinc-600 dark:text-zinc-400 font-semibold">
                   {stop.country || stop.countryName || 'Japan'}
                 </span>
               </div>

@@ -112,7 +112,7 @@ export const CreateTripPage = () => {
       <div className="glass-primary rounded-3xl p-6 sm:p-8 shadow-xl border">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
               STEP {currentStep} OF 4
             </span>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase mt-0.5">
@@ -124,7 +124,7 @@ export const CreateTripPage = () => {
           </div>
 
           {/* Stepper Dots */}
-          <div className="flex items-center gap-2 font-mono text-xs font-bold text-zinc-400">
+          <div className="flex items-center gap-2 font-mono text-xs font-bold text-zinc-600 dark:text-zinc-400">
             {[1, 2, 3, 4].map((step) => (
               <div key={step} className="flex items-center gap-2">
                 <button
@@ -136,7 +136,7 @@ export const CreateTripPage = () => {
                       ? 'bg-zinc-950 text-white dark:bg-zinc-100 dark:text-zinc-950 shadow-md border-zinc-950 dark:border-zinc-100'
                       : currentStep > step
                       ? 'glass-secondary text-zinc-900 dark:text-zinc-100'
-                      : 'glass-secondary text-zinc-400 opacity-60'
+                      : 'glass-secondary text-zinc-600 dark:text-zinc-400 opacity-60'
                   )}
                 >
                   {step}
@@ -198,7 +198,7 @@ export const CreateTripPage = () => {
           {/* Left: Stops Builder */}
           <div className="lg:col-span-6 glass-secondary rounded-3xl p-6 sm:p-8 shadow-lg space-y-6 border">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+              <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
                 YOUR STOPS ({stops.length})
               </span>
               <span className="text-xs text-zinc-500 dark:text-zinc-400 font-semibold">Reorder with arrows</span>
@@ -229,7 +229,7 @@ export const CreateTripPage = () => {
                       type="button"
                       disabled={idx === 0}
                       onClick={() => handleMoveStop(idx, -1)}
-                      className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 disabled:opacity-30"
+                      className="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 disabled:opacity-30"
                       title="Move up"
                     >
                       <MoveUp className="w-4 h-4" />
@@ -238,7 +238,7 @@ export const CreateTripPage = () => {
                       type="button"
                       disabled={idx === stops.length - 1}
                       onClick={() => handleMoveStop(idx, 1)}
-                      className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 disabled:opacity-30"
+                      className="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 disabled:opacity-30"
                       title="Move down"
                     >
                       <MoveDown className="w-4 h-4" />
@@ -285,7 +285,7 @@ export const CreateTripPage = () => {
 
           {/* Right: Interactive Map */}
           <div className="lg:col-span-6 space-y-4">
-            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block">
+            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block">
               LIVE ROUTE VISUALIZER
             </span>
             <InteractiveMap stops={stops} />
@@ -298,7 +298,7 @@ export const CreateTripPage = () => {
         <div className="glass-secondary rounded-3xl p-6 sm:p-12 shadow-lg space-y-8 animate-in fade-in border">
           {/* Budget tier */}
           <div className="space-y-3">
-            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
               BUDGET TIER:
             </span>
             <div className="grid grid-cols-3 gap-4">
@@ -321,7 +321,7 @@ export const CreateTripPage = () => {
 
           {/* Travel style */}
           <div className="space-y-3">
-            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
               TRAVEL STYLE & PACE:
             </span>
             <div className="grid grid-cols-3 gap-4">
@@ -344,7 +344,7 @@ export const CreateTripPage = () => {
 
           {/* Interests */}
           <div className="space-y-3">
-            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+            <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
               INTERESTS:
             </span>
             <div className="flex flex-wrap gap-3">
@@ -386,7 +386,7 @@ export const CreateTripPage = () => {
         <div className="glass-secondary rounded-3xl p-6 sm:p-12 shadow-lg space-y-8 animate-in fade-in border">
           <div className="flex items-center justify-between pb-6 border-b border-zinc-200/50 dark:border-zinc-800">
             <div>
-              <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">
+              <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">
                 SUMMARY
               </span>
               <h2 className="text-2xl sm:text-3xl font-black uppercase text-zinc-950 dark:text-zinc-50 mt-0.5">
@@ -401,7 +401,7 @@ export const CreateTripPage = () => {
 
           {/* Route Summary */}
           <div className="p-6 rounded-2xl glass-secondary border shadow-xs">
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400 block mb-3">
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 block mb-3">
               TRANSIT ROUTE
             </span>
             <RouteVisualizer stops={stops} />
@@ -409,15 +409,15 @@ export const CreateTripPage = () => {
 
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="p-4 rounded-2xl glass-secondary border shadow-xs">
-              <span className="text-[10px] uppercase font-bold text-zinc-400">Pace</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-600 dark:text-zinc-400">Pace</span>
               <p className="text-base font-black text-zinc-950 dark:text-zinc-50 mt-1">{travelStyle}</p>
             </div>
             <div className="p-4 rounded-2xl glass-secondary border shadow-xs">
-              <span className="text-[10px] uppercase font-bold text-zinc-400">Tier</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-600 dark:text-zinc-400">Tier</span>
               <p className="text-base font-black text-zinc-950 dark:text-zinc-50 mt-1">{budgetTier}</p>
             </div>
             <div className="p-4 rounded-2xl glass-secondary border shadow-xs">
-              <span className="text-[10px] uppercase font-bold text-zinc-400">Stops</span>
+              <span className="text-[10px] uppercase font-bold text-zinc-600 dark:text-zinc-400">Stops</span>
               <p className="text-base font-black text-zinc-950 dark:text-zinc-50 mt-1">{stops.length} Cities</p>
             </div>
           </div>

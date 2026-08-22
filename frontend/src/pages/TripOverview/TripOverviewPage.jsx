@@ -99,7 +99,7 @@ export const TripOverviewPage = () => {
 
       {/* Transit Corridor Section with Liquid Glass */}
       <div className="glass-secondary rounded-3xl p-6 sm:p-8 shadow-lg border">
-        <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400 block mb-2">
+        <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400 block mb-2">
           JOURNEY TRANSIT CORRIDOR
         </span>
         <TransitCorridor stops={currentTrip.stops} orientation="horizontal" />
@@ -147,10 +147,10 @@ export const TripOverviewPage = () => {
       {/* Interactive Map */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">
             GEOGRAPHIC MAP VISUALIZATION
           </span>
-          <span className="text-xs font-semibold text-zinc-500">{currentTrip.stops?.length || 3} Destinations</span>
+          <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">{currentTrip.stops?.length || 3} Destinations</span>
         </div>
         <InteractiveMap stops={currentTrip.stops} />
       </div>
@@ -158,7 +158,7 @@ export const TripOverviewPage = () => {
       {/* Trip Meta Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card padding="md" className="space-y-1">
-          <span className="text-[10px] font-mono font-bold uppercase text-zinc-400 flex items-center gap-1.5">
+          <span className="text-[10px] font-mono font-bold uppercase text-zinc-600 dark:text-zinc-400 flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5" /> Date Schedule
           </span>
           <p className="text-lg font-black text-zinc-950 dark:text-zinc-50">
@@ -168,7 +168,7 @@ export const TripOverviewPage = () => {
         </Card>
 
         <Card padding="md" className="space-y-1">
-          <span className="text-[10px] font-mono font-bold uppercase text-zinc-400 flex items-center gap-1.5">
+          <span className="text-[10px] font-mono font-bold uppercase text-zinc-600 dark:text-zinc-400 flex items-center gap-1.5">
             <span>💰</span> Total Budget
           </span>
           <p className="text-lg font-black text-zinc-950 dark:text-zinc-50">
@@ -178,7 +178,7 @@ export const TripOverviewPage = () => {
         </Card>
 
         <Card padding="md" className="space-y-1">
-          <span className="text-[10px] font-mono font-bold uppercase text-zinc-400 flex items-center gap-1.5">
+          <span className="text-[10px] font-mono font-bold uppercase text-zinc-600 dark:text-zinc-400 flex items-center gap-1.5">
             <Users className="w-3.5 h-3.5" /> Traveling Crew
           </span>
           <p className="text-lg font-black text-zinc-950 dark:text-zinc-50">

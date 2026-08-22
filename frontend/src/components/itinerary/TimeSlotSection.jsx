@@ -40,9 +40,9 @@ export const TimeSlotSection = ({
         ) : (
           <div
             onClick={() => onAddActivity(slotKey)}
-            className="p-6 rounded-2xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-zinc-50/50 dark:bg-zinc-900/40 cursor-pointer flex items-center justify-center gap-2 text-xs font-semibold text-zinc-500 transition-colors"
+            className="p-6 rounded-2xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-zinc-50/50 dark:bg-zinc-900/40 cursor-pointer flex items-center justify-center gap-2 text-xs font-semibold text-zinc-600 dark:text-zinc-400 transition-colors"
           >
-            <Plus className="w-4 h-4 text-zinc-400" />
+            <Plus className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
             <span>No activity planned yet. Click to add to {title}.</span>
           </div>
         )}

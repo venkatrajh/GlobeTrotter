@@ -62,7 +62,7 @@ export const ActivitiesPage = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
             GLOBAL EXPERIENCE CATALOG
           </span>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase mt-1">
@@ -122,7 +122,7 @@ export const ActivitiesPage = () => {
         </div>
 
         {/* Active Filters Summary */}
-        <div className="flex items-center justify-between text-xs text-zinc-500 pt-2 border-t border-zinc-200/50 dark:border-zinc-800/50 font-medium">
+        <div className="flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400 pt-2 border-t border-zinc-200/50 dark:border-zinc-800/50 font-medium">
           <span>
             Showing <strong className="text-zinc-950 dark:text-zinc-50">{filteredActivities.length}</strong> experiences
             {selectedCountry !== 'All' && ` in ${selectedCountry}`}

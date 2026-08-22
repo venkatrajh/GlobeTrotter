@@ -71,7 +71,7 @@ export const Modal = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-xl text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors"
+                className="p-2 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />

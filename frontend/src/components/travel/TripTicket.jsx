@@ -36,7 +36,7 @@ export const TripTicket = ({ trip, onCopyTrip }) => {
               <TransportIcon type="flight" className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-zinc-500">
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-zinc-600 dark:text-zinc-400">
                 GLOBETROTTER VOYAGE PASS
               </span>
               <h2 className="text-xl sm:text-2xl font-black tracking-tight uppercase text-zinc-950 dark:text-zinc-50">
@@ -66,7 +66,7 @@ export const TripTicket = ({ trip, onCopyTrip }) => {
 
             {/* Middle Transit */}
             <div className="flex flex-col items-center px-2">
-              <div className="flex items-center gap-1 text-xs font-mono text-zinc-500 font-bold">
+              <div className="flex items-center gap-1 text-xs font-mono text-zinc-600 dark:text-zinc-400 font-bold">
                 <TransportIcon type="flight" className="w-3 h-3" />
                 <span>2h 15m</span>
               </div>
@@ -98,28 +98,28 @@ export const TripTicket = ({ trip, onCopyTrip }) => {
         {/* Ticket Details & Tear section */}
         <div className="p-6 sm:p-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">DEPARTURE</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">DEPARTURE</span>
             <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-0.5">
               {formattedStart}
             </p>
           </div>
 
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">RETURN</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">RETURN</span>
             <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-0.5">
               {formattedEnd}
             </p>
           </div>
 
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">JOURNEY SCOPE</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">JOURNEY SCOPE</span>
             <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-0.5">
               {trip?.durationDays || 12} DAYS • {stops.length || 3} CITIES
             </p>
           </div>
 
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">TOTAL BUDGET</span>
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400">TOTAL BUDGET</span>
             <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-0.5">
               {fmtCurrency(trip?.totalBudget || 180000, trip?.destination)}
             </p>
@@ -133,7 +133,7 @@ export const TripTicket = ({ trip, onCopyTrip }) => {
               <QrCode className="w-8 h-8 text-zinc-950 dark:text-zinc-100" />
             </div>
             <div className="text-left">
-              <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase">SECURE PASS ID</span>
+              <span className="text-[10px] font-mono text-zinc-600 dark:text-zinc-400 font-bold uppercase">SECURE PASS ID</span>
               <p className="text-xs font-mono font-bold text-zinc-900 dark:text-zinc-100">
                 GT-2026-JP-9948
               </p>
@@ -167,7 +167,7 @@ export const TripTicket = ({ trip, onCopyTrip }) => {
       <div className="glass-secondary rounded-3xl p-6 sm:p-8 shadow-lg text-left border">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-400 font-bold">
               THE FULL ITINERARY
             </span>
             <h3 className="text-xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase mt-0.5">

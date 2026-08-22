@@ -51,7 +51,7 @@ export const CollaborationView = () => {
       <div className="glass-primary rounded-3xl p-6 sm:p-8 shadow-xl border">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
               SOCIAL CO-PLANNING
             </span>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase">
@@ -75,7 +75,7 @@ export const CollaborationView = () => {
 
         {/* Travel Crew List */}
         <div>
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-3">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-3">
             TRAVEL CREW ({crew.length})
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -130,7 +130,7 @@ export const CollaborationView = () => {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-mono font-bold text-zinc-500 uppercase">
+                    <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400 uppercase">
                       {item.category} • 📍 {item.location}
                     </span>
                     {item.isPopular && (
@@ -168,7 +168,7 @@ export const CollaborationView = () => {
                   </span>
                 </div>
 
-                <span className="text-xs text-zinc-500 font-medium">
+                <span className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">
                   {item.commentsCount} comments
                 </span>
               </div>
@@ -222,7 +222,7 @@ export const CollaborationView = () => {
 
         {/* Live Activity Feed (4 Cols) */}
         <div className="lg:col-span-4 glass-secondary rounded-3xl p-6 shadow-md border">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-4">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-4">
             LIVE ACTIVITY FEED
           </span>
 
@@ -232,7 +232,7 @@ export const CollaborationView = () => {
                 key={act.id}
                 className="p-3 rounded-2xl glass-primary border text-xs text-left shadow-xs"
               >
-                <div className="flex items-center justify-between text-zinc-400 font-mono text-[10px] mb-1">
+                <div className="flex items-center justify-between text-zinc-600 dark:text-zinc-400 font-mono text-[10px] mb-1">
                   <span>{act.time}</span>
                 </div>
                 <p className="text-zinc-800 dark:text-zinc-200 font-medium">

@@ -46,7 +46,7 @@ export const LoginPage = () => {
         {/* Content Box */}
         <div className="max-w-md w-full my-auto py-12">
           <div className="mb-8">
-            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
               SECURE ACCESS
             </span>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight uppercase text-zinc-950 dark:text-zinc-50 mt-1">
@@ -84,7 +84,7 @@ export const LoginPage = () => {
                 <button
                   type="button"
                   onClick={() => alert('Mock password reset sent.')}
-                  className="text-xs font-bold text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100 hover:underline"
+                  className="text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:underline"
                 >
                   Forgot Password?
                 </button>
@@ -107,7 +107,7 @@ export const LoginPage = () => {
           {/* Divider */}
           <div className="relative my-8 flex items-center justify-center">
             <div className="w-full border-t border-zinc-200/60 dark:border-zinc-800" />
-            <span className="absolute glass-secondary border px-3 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500">
+            <span className="absolute glass-secondary border px-3 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
               OR CONTINUE WITH
             </span>
           </div>
@@ -142,7 +142,7 @@ export const LoginPage = () => {
           </button>
 
           {/* Bottom link */}
-          <div className="mt-8 text-center text-xs font-semibold text-zinc-500">
+          <div className="mt-8 text-center text-xs font-semibold text-zinc-600 dark:text-zinc-400">
             <span>New here? </span>
             <NavLink to="/signup" className="text-zinc-950 dark:text-zinc-50 font-bold hover:underline">
               Create an account
@@ -151,7 +151,7 @@ export const LoginPage = () => {
         </div>
 
         {/* Footer info */}
-        <div className="text-[11px] text-zinc-400 font-medium">
+        <div className="text-[11px] text-zinc-600 dark:text-zinc-400 font-medium">
           GlobeTrotter Multi-City Platform • Mock Auth Active
         </div>
       </div>
@@ -170,7 +170,7 @@ export const LoginPage = () => {
 
         {/* Statement Top */}
         <div className="relative z-10 text-left">
-          <span className="text-xs font-mono font-bold tracking-widest text-zinc-400 uppercase">
+          <span className="text-xs font-mono font-bold tracking-widest text-zinc-600 dark:text-zinc-400 uppercase">
             GLOBETROTTER VISUAL ENGINE
           </span>
           <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight leading-tight mt-2">
@@ -255,7 +255,7 @@ export const LoginPage = () => {
         </div>
 
         {/* Bottom tagline */}
-        <div className="relative z-10 text-left text-xs font-mono text-zinc-400">
+        <div className="relative z-10 text-left text-xs font-mono text-zinc-600 dark:text-zinc-400">
           Seamless multi-city transit • Real-time AI replanning • High-speed routes
         </div>
       </div>

@@ -18,7 +18,7 @@ export const RouteOptimizerView = ({ onApply }) => {
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-8 text-left animate-in fade-in relative z-10">
       <div className="glass-primary rounded-3xl p-6 sm:p-10 shadow-2xl border">
-        <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
+        <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 text-xs font-mono font-bold tracking-widest uppercase mb-2">
           <Zap className="w-4 h-4 text-amber-500" /> ROUTE INTELLIGENCE ENGINE
         </div>
         <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 mb-2 uppercase">
@@ -34,7 +34,7 @@ export const RouteOptimizerView = ({ onApply }) => {
           <div className="p-6 rounded-3xl glass-secondary border flex flex-col justify-between shadow-xs">
             <div>
               <div className="flex items-center justify-between border-b border-zinc-200/60 dark:border-zinc-700/60 pb-3 mb-4">
-                <span className="text-xs font-mono font-bold text-zinc-500 uppercase">
+                <span className="text-xs font-mono font-bold text-zinc-600 dark:text-zinc-400 uppercase">
                   CURRENT ROUTE
                 </span>
                 <span className="text-xs font-bold text-rose-500">Backtracking detected</span>
@@ -68,7 +68,7 @@ export const RouteOptimizerView = ({ onApply }) => {
             </div>
 
             <div className="pt-4 mt-4 border-t border-zinc-200/60 dark:border-zinc-700/60 flex items-center justify-between font-mono text-xs font-semibold">
-              <span className="text-zinc-500">Total Travel:</span>
+              <span className="text-zinc-600 dark:text-zinc-400">Total Travel:</span>
               <span className="font-bold text-zinc-950 dark:text-zinc-100">4h 30m ({fmtDistance(510, 0)})</span>
             </div>
           </div>
@@ -121,7 +121,7 @@ export const RouteOptimizerView = ({ onApply }) => {
 
         {/* YOU SAVE Stats */}
         <div className="p-6 rounded-3xl glass-secondary border shadow-xs">
-          <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-zinc-400 block mb-4">
+          <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block mb-4">
             YOU SAVE:
           </span>
           <div className="grid grid-cols-3 gap-4 text-left">

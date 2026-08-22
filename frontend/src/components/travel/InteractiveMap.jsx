@@ -12,9 +12,9 @@ export const InteractiveMap = ({
 }) => {
   const [zoomLevel, setZoomLevel] = useState(1);
   const { fmtDistance } = usePreferences();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
-  const isLight = theme === 'light';
+  const isLight = resolvedTheme === 'light';
 
   // Fallback default coordinates if not present
   const defaultCoords = [

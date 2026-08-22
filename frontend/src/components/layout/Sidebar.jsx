@@ -48,7 +48,7 @@ export const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
               <span className="font-bold tracking-tight text-sm text-zinc-950 dark:text-zinc-50 uppercase">
                 GLOBETROTTER
               </span>
-              <span className="text-[10px] text-zinc-400 font-medium tracking-wider uppercase">
+              <span className="text-[10px] text-zinc-600 dark:text-zinc-400 font-medium tracking-wider uppercase">
                 Intelligent Travel
               </span>
             </div>
@@ -67,7 +67,7 @@ export const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
           type="button"
           onClick={onToggleCollapse}
           className={clsx(
-            'p-1.5 rounded-lg text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors',
+            'p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors',
             isCollapsed && 'hidden'
           )}
           title={isCollapsed ? 'Expand sidebar' : 'Minimize sidebar'}
@@ -84,7 +84,7 @@ export const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-2 rounded-xl text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors"
+              className="p-2 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/60 transition-colors"
               aria-label="Expand sidebar"
             >
               <ChevronRight className="w-4 h-4" />
@@ -95,7 +95,7 @@ export const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
 
       {/* Main Navigation Items */}
       <div className="flex-1 py-4 px-3 flex flex-col gap-1 overflow-y-auto">
-        <div className={clsx('px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-zinc-400', isCollapsed && 'hidden')}>
+        <div className={clsx('px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400', isCollapsed && 'hidden')}>
           Menu
         </div>
         {mainNavItems.map((item) => {
@@ -144,7 +144,7 @@ export const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
 
       {/* Bottom Profile & Settings */}
       <div className="p-3 border-t border-zinc-200/50 dark:border-zinc-800/50 flex flex-col gap-1">
-        <div className={clsx('px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-zinc-400', isCollapsed && 'hidden')}>
+        <div className={clsx('px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400', isCollapsed && 'hidden')}>
           Account
         </div>
         {bottomNavItems.map((item) => {

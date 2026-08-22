@@ -27,7 +27,7 @@ export const MyTripsPage = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+          <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
             EXPEDITIONS REPOSITORY
           </span>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 uppercase mt-1">

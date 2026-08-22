@@ -127,23 +127,23 @@ export const ProfilePage = () => {
                   Verified
                 </Badge>
               </div>
-              <p className="text-xs text-zinc-500 font-mono mt-0.5">{user?.handle || displayName}</p>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 font-mono mt-0.5">{user?.handle || displayName}</p>
 
               {/* Personal Badges: Age, Gender, Location */}
               <div className="flex flex-wrap items-center gap-2.5 mt-3">
                 <span className="px-2.5 py-1 rounded-xl bg-white/60 dark:bg-zinc-800/60 border border-zinc-200/60 dark:border-zinc-700/60 text-xs font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-zinc-500" /> {displayLocation}
+                  <MapPin className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" /> {displayLocation}
                 </span>
 
                 {displayAge && (
                   <span className="px-2.5 py-1 rounded-xl bg-white/60 dark:bg-zinc-800/60 border border-zinc-200/60 dark:border-zinc-700/60 text-xs font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-zinc-500" /> {displayAge} yrs
+                    <Calendar className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" /> {displayAge} yrs
                   </span>
                 )}
 
                 {displayGender && displayGender !== 'Prefer not to say' && (
                   <span className="px-2.5 py-1 rounded-xl bg-white/60 dark:bg-zinc-800/60 border border-zinc-200/60 dark:border-zinc-700/60 text-xs font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
-                    <UserCheck className="w-3.5 h-3.5 text-zinc-500" /> {displayGender}
+                    <UserCheck className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" /> {displayGender}
                   </span>
                 )}
               </div>
@@ -174,7 +174,7 @@ export const ProfilePage = () => {
 
         {/* Bio */}
         <div className="space-y-1.5">
-          <span className="text-[10px] font-mono uppercase font-bold text-zinc-400 tracking-wider block">
+          <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 tracking-wider block">
             ABOUT ME / BIO
           </span>
           <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-medium">
@@ -185,7 +185,7 @@ export const ProfilePage = () => {
         {/* Travel Preferences with Liquid Glass Cards */}
         <div className="pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 space-y-6">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-mono uppercase font-bold text-zinc-400 tracking-wider block">
+            <span className="text-[10px] font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 tracking-wider block">
               TRAVEL STYLE & PREFERENCES
             </span>
             <button
@@ -199,21 +199,21 @@ export const ProfilePage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-4 rounded-2xl glass-secondary border">
-              <span className="text-[10px] text-zinc-400 font-bold uppercase block">Travel Style</span>
+              <span className="text-[10px] text-zinc-600 dark:text-zinc-400 font-bold uppercase block">Travel Style</span>
               <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-1 uppercase">
                 {user?.travelPreferences?.primaryStyle || travelStyle}
               </p>
             </div>
 
             <div className="p-4 rounded-2xl glass-secondary border">
-              <span className="text-[10px] text-zinc-400 font-bold uppercase block">Travel Pace</span>
+              <span className="text-[10px] text-zinc-600 dark:text-zinc-400 font-bold uppercase block">Travel Pace</span>
               <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-1 uppercase">
                 {user?.travelPreferences?.pace || travelPace}
               </p>
             </div>
 
             <div className="p-4 rounded-2xl glass-secondary border">
-              <span className="text-[10px] text-zinc-400 font-bold uppercase block">Budget Tier</span>
+              <span className="text-[10px] text-zinc-600 dark:text-zinc-400 font-bold uppercase block">Budget Tier</span>
               <p className="text-sm font-black text-zinc-950 dark:text-zinc-50 mt-1 uppercase">
                 {user?.travelPreferences?.budgetLevel || budgetPreference}
               </p>
@@ -221,7 +221,7 @@ export const ProfilePage = () => {
           </div>
 
           <div>
-            <span className="text-xs text-zinc-400 font-bold uppercase block mb-2.5">
+            <span className="text-xs text-zinc-600 dark:text-zinc-400 font-bold uppercase block mb-2.5">
               Favorite Activity Categories & Interests
             </span>
             <div className="flex flex-wrap gap-2">
@@ -252,7 +252,7 @@ export const ProfilePage = () => {
 
           {/* Personal Info with Age, Gender, City, Country */}
           <div className="space-y-4">
-            <span className="text-xs font-mono uppercase font-bold text-zinc-400 tracking-wider block border-b border-zinc-200/60 dark:border-zinc-800/60 pb-2">
+            <span className="text-xs font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 tracking-wider block border-b border-zinc-200/60 dark:border-zinc-800/60 pb-2">
               Personal Information
             </span>
 
@@ -343,7 +343,7 @@ export const ProfilePage = () => {
 
           {/* Travel Preferences */}
           <div className="space-y-4 pt-2">
-            <span className="text-xs font-mono uppercase font-bold text-zinc-400 tracking-wider block border-b border-zinc-200/60 dark:border-zinc-800/60 pb-2">
+            <span className="text-xs font-mono uppercase font-bold text-zinc-600 dark:text-zinc-400 tracking-wider block border-b border-zinc-200/60 dark:border-zinc-800/60 pb-2">
               Travel Preferences
             </span>
 

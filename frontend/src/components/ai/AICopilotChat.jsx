@@ -66,7 +66,7 @@ export const AICopilotChat = () => {
       {/* LEFT SIDE: Current Trip Context with Liquid Glass */}
       <div className="lg:col-span-4 flex flex-col gap-6">
         <div className="glass-secondary rounded-3xl p-6 sm:p-8 shadow-md border">
-          <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+          <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
             ACTIVE TRIP CONTEXT
           </span>
           <h3 className="text-xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 mt-1 mb-4 uppercase">
@@ -100,7 +100,7 @@ export const AICopilotChat = () => {
 
         {/* Quick Prompts Panel */}
         <div className="glass-secondary rounded-3xl p-6 shadow-md border">
-          <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-400 block mb-3">
+          <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400 block mb-3">
             SUGGESTED COPILOT ACTIONS
           </span>
           <div className="flex flex-col gap-2">
@@ -112,7 +112,7 @@ export const AICopilotChat = () => {
                 className="text-left px-3.5 py-2.5 rounded-2xl border glass-secondary hover:border-zinc-400 dark:hover:border-zinc-500 text-xs font-bold text-zinc-900 dark:text-zinc-100 transition-all flex items-center justify-between group shadow-xs"
               >
                 <span>{action.label}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-colors" />
+                <ArrowRight className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-colors" />
               </button>
             ))}
           </div>
@@ -206,7 +206,7 @@ export const AICopilotChat = () => {
                           <div className="text-emerald-600 dark:text-emerald-400 font-bold">
                             ✓ {msg.card.replacement}
                           </div>
-                          {msg.card.note && <div className="text-[11px] text-zinc-500">{msg.card.note}</div>}
+                          {msg.card.note && <div className="text-[11px] text-zinc-600 dark:text-zinc-400">{msg.card.note}</div>}
                         </div>
                       )}
 
@@ -220,7 +220,7 @@ export const AICopilotChat = () => {
                     </div>
                   )}
 
-                  <span className="block text-[10px] text-zinc-400 mt-2 text-right">
+                  <span className="block text-[10px] text-zinc-600 dark:text-zinc-400 mt-2 text-right">
                     {msg.timestamp}
                   </span>
                 </div>

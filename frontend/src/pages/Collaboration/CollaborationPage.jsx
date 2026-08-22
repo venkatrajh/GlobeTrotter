@@ -19,7 +19,7 @@ export const CollaborationPage = () => {
           <button
             type="button"
             onClick={() => navigate(`/trips/${currentTrip.id}`)}
-            className="text-xs font-bold uppercase tracking-wider text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-1 hover:underline"
+            className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 flex items-center gap-1 mb-1 hover:underline"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to {currentTrip.title}
           </button>

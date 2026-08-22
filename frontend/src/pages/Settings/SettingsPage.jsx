@@ -4,7 +4,7 @@ import { useTrips } from '../../context/TripContext';
 import { usePreferences } from '../../context/PreferencesContext';
 import { Button } from '../../components/common/Button';
 import { Select } from '../../components/common/Select';
-import { Sun, Moon, Bell, Globe, Check, Sparkles, Plane, Users, Lock } from 'lucide-react';
+import { Sun, Moon, Monitor, Bell, Globe, Check, Sparkles, Plane, Users, Lock } from 'lucide-react';
 import { clsx } from 'clsx';
 
 export const SettingsPage = () => {
@@ -76,13 +76,13 @@ export const SettingsPage = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 space-y-10 text-left">
       {/* Header */}
       <div>
-        <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-400">
+        <span className="text-[11px] font-mono uppercase font-bold tracking-widest text-zinc-600 dark:text-zinc-400">
           PREFERENCES & CONFIGURATION
         </span>
         <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-zinc-950 dark:text-zinc-50 mt-1">
           SETTINGS
         </h1>
-        <p className="text-sm text-zinc-500 font-medium mt-1">
+        <p className="text-sm text-zinc-600 dark:text-zinc-400 font-medium mt-1">
           Manage your theme, regional units, and multi-tier notification streams across the entire app.
         </p>
       </div>
@@ -93,12 +93,13 @@ export const SettingsPage = () => {
           <h3 className="text-lg font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
             Interface Theme Environment
           </h3>
-          <p className="text-xs text-zinc-500 mt-1">
-            Choose between Daylight Liquid Glass or Midnight Spatial Glass.
+          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+            Choose between Daylight Liquid Glass, Midnight Space Glass, or System appearance.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {/* Light Theme Option */}
           <div
             onClick={() => toggleTheme('light')}
             className={clsx(
@@ -116,10 +117,11 @@ export const SettingsPage = () => {
             </div>
             <div>
               <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50">Daylight Liquid Glass</h4>
-              <p className="text-[11px] text-zinc-400 mt-0.5">Bright frosted architectural world & ambient globes</p>
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-400 mt-0.5">Bright frosted architectural world & ambient globes</p>
             </div>
           </div>
 
+          {/* Dark Theme Option */}
           <div
             onClick={() => toggleTheme('dark')}
             className={clsx(
@@ -137,7 +139,29 @@ export const SettingsPage = () => {
             </div>
             <div>
               <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50">Midnight Space Glass</h4>
-              <p className="text-[11px] text-zinc-400 mt-0.5">Deep obsidian glass & luminous planetary trajectories</p>
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-400 mt-0.5">Deep obsidian glass & luminous planetary trajectories</p>
+            </div>
+          </div>
+
+          {/* System Theme Option */}
+          <div
+            onClick={() => toggleTheme('system')}
+            className={clsx(
+              'p-5 rounded-2xl border cursor-pointer transition-all flex flex-col justify-between gap-3 shadow-xs',
+              theme === 'system'
+                ? 'bg-white/90 dark:bg-zinc-800/90 border-zinc-950 dark:border-zinc-100 ring-2 ring-zinc-950 dark:ring-zinc-100'
+                : 'glass-secondary hover:border-zinc-400'
+            )}
+          >
+            <div className="flex items-center justify-between">
+              <div className="w-8 h-8 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+                <Monitor className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
+              </div>
+              {theme === 'system' && <span className="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-md">Active World</span>}
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50">System</h4>
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-400 mt-0.5">Match your device's appearance automatically</p>
             </div>
           </div>
         </div>
@@ -149,7 +173,7 @@ export const SettingsPage = () => {
           <h3 className="text-lg font-bold tracking-tight text-zinc-950 dark:text-zinc-50 flex items-center gap-2">
             <Globe className="w-5 h-5" /> Regional Units & Currency
           </h3>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
             Updates distances, temperatures, currencies, dates, and times globally across all pages.
           </p>
         </div>
@@ -213,7 +237,7 @@ export const SettingsPage = () => {
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-zinc-200/50 dark:border-zinc-800/50">
-            <span className="text-xs text-zinc-400 font-medium">
+            <span className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">
               Active: {currencyDisplay} • {distanceUnit} • {tempUnit} • {dateFormat} • {timeFormat}
             </span>
 
@@ -230,14 +254,14 @@ export const SettingsPage = () => {
           <h3 className="text-lg font-bold tracking-tight text-zinc-950 dark:text-zinc-50 flex items-center gap-2">
             <Bell className="w-5 h-5" /> Notification Preferences
           </h3>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
             Choose which alerts you receive across trips, AI co-planning, and collaboration.
           </p>
         </div>
 
         {/* Group 1: Trip Updates */}
         <div className="space-y-3">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block flex items-center gap-2">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block flex items-center gap-2">
             <Plane className="w-3.5 h-3.5" /> TRIP UPDATES
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -256,7 +280,7 @@ export const SettingsPage = () => {
               >
                 <div>
                   <h5 className="text-xs font-bold text-zinc-900 dark:text-zinc-100">{item.label}</h5>
-                  <p className="text-[10px] text-zinc-400 mt-0.5">{item.desc}</p>
+                  <p className="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">{item.desc}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -271,7 +295,7 @@ export const SettingsPage = () => {
 
         {/* Group 2: AI & Smart Planning */}
         <div className="space-y-3">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block flex items-center gap-2">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block flex items-center gap-2">
             <Sparkles className="w-3.5 h-3.5" /> AI & SMART PLANNING
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -289,7 +313,7 @@ export const SettingsPage = () => {
               >
                 <div>
                   <h5 className="text-xs font-bold text-zinc-900 dark:text-zinc-100">{item.label}</h5>
-                  <p className="text-[10px] text-zinc-400 mt-0.5">{item.desc}</p>
+                  <p className="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">{item.desc}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -304,7 +328,7 @@ export const SettingsPage = () => {
 
         {/* Group 3: Collaboration */}
         <div className="space-y-3">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block flex items-center gap-2">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block flex items-center gap-2">
             <Users className="w-3.5 h-3.5" /> COLLABORATION
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -322,7 +346,7 @@ export const SettingsPage = () => {
               >
                 <div>
                   <h5 className="text-xs font-bold text-zinc-900 dark:text-zinc-100">{item.label}</h5>
-                  <p className="text-[10px] text-zinc-400 mt-0.5">{item.desc}</p>
+                  <p className="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">{item.desc}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -337,7 +361,7 @@ export const SettingsPage = () => {
 
         {/* Group 4: Account & Delivery Channels */}
         <div className="space-y-3">
-          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-400 block flex items-center gap-2">
+          <span className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400 block flex items-center gap-2">
             <Lock className="w-3.5 h-3.5" /> ACCOUNT & DELIVERY CHANNELS
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -354,7 +378,7 @@ export const SettingsPage = () => {
               >
                 <div>
                   <h5 className="text-xs font-bold text-zinc-900 dark:text-zinc-100">{item.label}</h5>
-                  <p className="text-[10px] text-zinc-400 mt-0.5">{item.desc}</p>
+                  <p className="text-[10px] text-zinc-600 dark:text-zinc-400 mt-0.5">{item.desc}</p>
                 </div>
                 <input
                   type="checkbox"

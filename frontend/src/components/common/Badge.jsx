@@ -40,7 +40,7 @@ export const Select = ({
             </option>
           ))}
         </select>
-        <div className="absolute right-3.5 text-zinc-500 pointer-events-none">
+        <div className="absolute right-3.5 text-zinc-600 dark:text-zinc-400 pointer-events-none">
           <ChevronDown className="w-4 h-4" />
         </div>
       </div>

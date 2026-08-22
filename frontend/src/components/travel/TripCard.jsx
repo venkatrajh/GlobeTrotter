@@ -67,7 +67,7 @@ export const TripCard = ({ trip }) => {
       <div className="p-6 flex-1 flex flex-col justify-between gap-5">
         {/* Route Visualizer Compact with Liquid Glass */}
         <div className="glass-secondary p-3.5 rounded-2xl border">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-bold block mb-1.5">
+          <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-bold block mb-1.5">
             JOURNEY ROUTE
           </span>
           <RouteVisualizer stops={trip.stops} orientation="compact" />
@@ -76,7 +76,7 @@ export const TripCard = ({ trip }) => {
         {/* Meta Stats Row */}
         <div className="grid grid-cols-3 gap-3 text-left py-2 border-t border-b border-zinc-200/50 dark:border-zinc-800/80">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 flex items-center gap-1">
               <Calendar className="w-3 h-3" /> Dates
             </span>
             <p className="text-xs font-bold text-zinc-900 dark:text-zinc-100 mt-1 truncate">
@@ -85,7 +85,7 @@ export const TripCard = ({ trip }) => {
           </div>
 
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 flex items-center gap-1">
               <Clock className="w-3 h-3" /> Duration
             </span>
             <p className="text-xs font-bold text-zinc-900 dark:text-zinc-100 mt-1">
@@ -94,7 +94,7 @@ export const TripCard = ({ trip }) => {
           </div>
 
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 flex items-center gap-1">
               <span>💰</span> Budget
             </span>
             <p className="text-xs font-bold text-zinc-900 dark:text-zinc-100 mt-1">
@@ -105,7 +105,7 @@ export const TripCard = ({ trip }) => {
 
         {/* Card Footer CTA */}
         <div className="flex items-center justify-between pt-1">
-          <span className="text-xs font-bold text-zinc-500 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-colors">
+          <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-colors">
             {trip.stops?.length || 3} Cities • {trip.crew?.length || 1} Travelers
           </span>
           <Button
